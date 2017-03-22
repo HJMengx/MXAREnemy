@@ -159,8 +159,12 @@ extension MXMapViewController : CLLocationManagerDelegate,MKMapViewDelegate,MXGa
             let index = self.enemys.index { (item : MXARItem) -> Bool in
                 return item.location == enemy.location
             }
+              
+            if index != nil {
+                
+                self.enemys.remove(at: index!)
+            }
             
-            self.enemys.remove(at: index!)
             
             if self.selectedAnnotation != nil {
                 
